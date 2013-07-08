@@ -3,11 +3,8 @@ var express = require('express');
 
 var app = express.createServer(express.logger());
 
-var raw_buffer;
-fs.readFile('/myrepo/bitstarter/index.html', function (err, data) {
-    if(err) throw err;
-    raw_buffer = data;
-});
+
+var raw_buffer = fs.readFileSync('./index.html');
 
 var content = raw_buffer.toString();
 
